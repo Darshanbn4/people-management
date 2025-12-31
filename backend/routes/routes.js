@@ -15,8 +15,9 @@ router.get('/',async(req,res)=>{
 
 router.post('/',async(req, res)=>
     {
+       console.log("BODY RECEIVED:", req.body);
     try{
-        const newPerson=new newPerson(req.body);
+        const newPerson=new person(req.body);
         await newPerson.save();
         res.status(201).json(newPerson);
     }
