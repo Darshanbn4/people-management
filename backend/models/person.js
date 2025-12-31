@@ -5,7 +5,7 @@ const PersonSchema = mongoose.Schema({
         required: true
     },
     age: {
-        type: String,
+        type: Number,
         required: true
     },
     gender: {
@@ -14,10 +14,10 @@ const PersonSchema = mongoose.Schema({
     },
     mobile: {
         type: String,
-        requirement:true
+        required:true
     }
 },
-    {timestramp:true}
+    {timestramps:true}
 );
 
 module.exports = mongoose.model('Person', PersonSchema);

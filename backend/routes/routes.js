@@ -16,7 +16,8 @@ router.get('/',async(req,res)=>{
 router.post('/',async(req, res)=>
     {
     try{
-        const newPerson=await newPerson.save();
+        const newPerson=new newPerson(req.body);
+        await newPerson.save();
         res.status(201).json(newPerson);
     }
     catch(error){
@@ -24,9 +25,9 @@ router.post('/',async(req, res)=>
     }
 });
 
-router.put("/", async (req, res) => {
+router.put("/:id", async (req, res) => {
   try {
-    const updatedPerson = await Person.findByIdAndUpdate(
+    const updatedPerson = await person.findByIdAndUpdate(
       req.params.id,
       req.body,
       { new: true }
@@ -38,13 +39,13 @@ router.put("/", async (req, res) => {
   }
 });
 
-router.delete("/", async (req, res) => {
+router.delete("/:id", async (req, res) => {
   try {
-    await Person.findByIdAndDelete(req.params.id);
+    await person.findByIdAndDelete(req.params.id);
     res.status(204).send();
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
 });
 
-model.exports=router;
+module.exports=router;
