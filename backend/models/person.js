@@ -1,23 +1,25 @@
 const mongoose = require('mongoose');
-const PersonSchema = mongoose.Schema({
+
+const PersonSchema = new mongoose.Schema(
+  {
     name: {
-        type: String,
-        required: true
+      type: String,
+      required: true
     },
     age: {
-        type: Number,
-        required: true
+      type: Number,
+      required: true
     },
     gender: {
-        type: String,
-        required: true
+      type: String,
+      required: true
     },
     mobile: {
-        type: Number,
-        required:true
+      type: String,
+      required: true
     }
-},
-    {timestramps:true}
+  },
+  { timestamps: true } 
 );
 
 module.exports = mongoose.model('Person', PersonSchema);
