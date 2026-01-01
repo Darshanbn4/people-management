@@ -1,0 +1,22 @@
+<p>Total people: {{ people.length }}</p>
+
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Mobile</th>
+    <th>Actions</th>
+  </tr>
+
+  <tr *ngFor="let person of people">
+    <td>{{ person.name }}</td>
+    <td>{{ person.age }}</td>
+    <td>{{ person.gender }}</td>
+    <td>{{ person.mobile }}</td>
+    <td>
+      <button [routerLink]="['/people/edit', person._id]">Edit</button>
+      <button [routerLink]="['/people/delete', person._id]">Delete</button>
+    </td>
+  </tr>
+</table>

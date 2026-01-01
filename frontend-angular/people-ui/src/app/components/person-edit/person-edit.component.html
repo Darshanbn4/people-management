@@ -1,0 +1,15 @@
+<h3>Edit Person</h3>
+
+<label>Name:</label>
+<input [(ngModel)]="person.name" /><br />
+
+<label>Age:</label>
+<input type="number" [(ngModel)]="person.age" /><br />
+
+<label>Gender:</label>
+<input [(ngModel)]="person.gender" /><br />
+
+<label>Mobile:</label>
+<input [(ngModel)]="person.mobile" /><br /><br />
+
+<button (click)="update()">Update</button>
