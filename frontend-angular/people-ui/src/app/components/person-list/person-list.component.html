@@ -1,22 +1,35 @@
-<p>Total people: {{ people.length }}</p>
+<div class="card">
+  <div class="stats">
+    <p>Total people: {{ people.length }}</p>
+  </div>
 
-<table border="1">
-  <tr>
-    <th>Name</th>
-    <th>Age</th>
-    <th>Gender</th>
-    <th>Mobile</th>
-    <th>Actions</th>
-  </tr>
+  <!-- <div class="text-center mb-20">
+    <button class="add-btn" [routerLink]="['/people/add']">Add New Person</button>
+  </div> -->
 
-  <tr *ngFor="let person of people">
-    <td>{{ person.name }}</td>
-    <td>{{ person.age }}</td>
-    <td>{{ person.gender }}</td>
-    <td>{{ person.mobile }}</td>
-    <td>
-      <button [routerLink]="['/people/edit', person._id]">Edit</button>
-      <button [routerLink]="['/people/delete', person._id]">Delete</button>
-    </td>
-  </tr>
-</table>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Mobile</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of people">
+        <td>{{ person.name }}</td>
+        <td>{{ person.age }}</td>
+        <td>{{ person.gender }}</td>
+        <td>{{ person.mobile }}</td>
+        <td>
+          <div class="flex">
+            <button class="edit-btn" [routerLink]="['/people/edit', person._id]">Edit</button>
+            <button class="delete-btn" [routerLink]="['/people/delete', person._id]">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

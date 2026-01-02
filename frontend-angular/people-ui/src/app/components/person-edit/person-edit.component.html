@@ -1,15 +1,27 @@
-<h3>Edit Person</h3>
+<div class="card">
+  <h3>Edit Person</h3>
+  
+  <form>
+    <label for="name">Name:</label>
+    <input id="name" type="text" [(ngModel)]="person.name" placeholder="Enter full name" />
 
-<label>Name:</label>
-<input [(ngModel)]="person.name" /><br />
+    <label for="age">Age:</label>
+    <input id="age" type="number" [(ngModel)]="person.age" placeholder="Enter age" />
 
-<label>Age:</label>
-<input type="number" [(ngModel)]="person.age" /><br />
+    <label for="gender">Gender:</label>
+    <select id="gender" [(ngModel)]="person.gender">
+      <option value="">Select Gender</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
 
-<label>Gender:</label>
-<input [(ngModel)]="person.gender" /><br />
+    <label for="mobile">Mobile:</label>
+    <input id="mobile" type="tel" [(ngModel)]="person.mobile" placeholder="Enter mobile number" />
 
-<label>Mobile:</label>
-<input [(ngModel)]="person.mobile" /><br /><br />
-
-<button (click)="update()">Update</button>
+    <div class="flex-center mt-20">
+      <button type="button" (click)="update()">Update Person</button>
+      <button type="button" class="delete-btn" [routerLink]="['/people']">Cancel</button>
+    </div>
+  </form>
+</div>
